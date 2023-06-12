@@ -3,3 +3,5 @@
 
 
 <a href="https://codeclimate.com/github/Spike2250/python-project-49/maintainability"><img src="https://api.codeclimate.com/v1/badges/29a79c8af5d06daa6134/maintainability" /></a>
+
+<script async id="asciicast-CKIj1mckz7i5Z3PIdINaDwexT" src="https://asciinema.org/a/CKIj1mckz7i5Z3PIdINaDwexT.js"></script>
