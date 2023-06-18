@@ -26,6 +26,7 @@ def even_game():
 
     start_game(rules, questions, correct_answers)
 
+
 # запускаем игру
 def main():
     even_game()
