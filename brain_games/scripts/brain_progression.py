@@ -32,7 +32,7 @@ def progression_game():
         # меняем значение на ".."
         progression[index_miss] = '..'
         # формируем вопрос
-        questions.append(' '.join(progression))
+        questions.append(f"Question: {' '.join(progression)}")
 
     start_game(rules, questions, correct_answers)
 
