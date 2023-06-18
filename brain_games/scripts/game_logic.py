@@ -15,7 +15,9 @@ def start_game(rules: str, questions: list, correct_answers: list):
     """
     # приветствуем пользователя и спрашиваем имя
     user_name = greeting()
+    # выводим правила игры
     print(rules)
+    # задаем до 3х вопросов пользователю
     for i in range(3):
         # выводим вопрос
         print(questions[i])
