@@ -1,33 +1,7 @@
 #!/usr/bin/env python3
-from brain_games.scripts.game_logic import start_game
-from random import randint
+from brain_games.games.even import even_game
 
 
-# игра "Проверка на четность"
-def even_game():
-    """
-    """
-    # правила игры
-    rules = 'Answer "yes" if the number is even, otherwise answer "no".'
-    # создаем пустые списки для вопросов и правильных ответов
-    questions = []
-    correct_answers = []
-    # подготавливаем списки вопросов и правильных ответов
-    for i in range(3):
-        # задаем новое число для вопроса в заданном диапазоне
-        number = randint(1, 100)
-        # формируем правильный ответ
-        if number % 2 == 0:
-            correct_answers.append('yes')
-        else:
-            correct_answers.append('no')
-        # формируем вопрос
-        questions.append(f"Question: {number}")
-
-    start_game(rules, questions, correct_answers)
-
-
-# запускаем игру
 def main():
     even_game()
 

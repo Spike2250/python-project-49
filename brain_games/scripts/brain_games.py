@@ -6,7 +6,6 @@ def greeting():
     print('Welcome to the Brain Games!')
     name = welcome_user()
     print(f'Hello, {name}!')
-
     return name
 
 
