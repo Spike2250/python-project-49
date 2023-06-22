@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.games.prime import prime_number_game
+from brain_games.game_logic import start_game
 
 
 # запускаем игру
 def main():
-    prime_number_game()
+    start_game('prime')
 
 
 if __name__ == '__main__':

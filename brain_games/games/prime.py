@@ -1,10 +1,6 @@
 #!/usr/bin/env python3
-from brain_games.scripts.brain_games import greeting
 from random import randint
-from brain_games.game_logic import is_user_answer_correct
 
-
-ROUNDS = 3
 
 MIN_NUMBER = 2
 MAX_NUMBER = 199
@@ -13,20 +9,14 @@ MAX_NUMBER = 199
 def prime_number_game():
     """
     """
-    user_name = greeting()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    for i in range(ROUNDS):
-        number = randint(MIN_NUMBER, MAX_NUMBER)
-        question = f"Question: {number}"
-        if is_prime(number):
-            correct_answer = 'yes'
-        else:
-            correct_answer = 'no'
-
-        if not is_user_answer_correct(user_name, question, correct_answer):
-            break
+    number = randint(MIN_NUMBER, MAX_NUMBER)
+    question = f"Question: {number}"
+    if is_prime(number):
+        correct_answer = 'yes'
     else:
-        print(f"Congratulations, {user_name}!")
+        correct_answer = 'no'
+
+    return question, correct_answer
 
 
 def is_prime(number: int) -> bool:
