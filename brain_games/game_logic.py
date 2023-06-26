@@ -1,42 +1,37 @@
 import prompt
 from brain_games.scripts.brain_games import greeting
-from brain_games.games.calc import calc_game
-from brain_games.games.even import even_game
-from brain_games.games.gcd import gcd_game
-from brain_games.games.prime import prime_number_game
-from brain_games.games.progression import progression_game
+from brain_games.games import calc, even, gcd, prime, progression
 
 
 ROUNDS = 3
 
 
+def define_rules_and_mechanics(game_type):
+    """"""
+    games = {
+        'calc': calc,
+        'even': even,
+        'gcd': gcd,
+        'prime': prime,
+        'progression': progression
+    }
+    if game_type in games:
+        rules = games[game_type].RULES
+        generate_round = games[game_type].generate_round
+    else:
+        raise NameError('unidentified game type')
+
+    return rules, generate_round
+
+
 def start_game(game_type):
     """"""
-    match game_type:
-        case 'calc':
-            rules = 'What is the result of the expression?'
-            game = calc_game
-        case 'even':
-            rules = 'Answer "yes" if the number is even, '\
-                    'otherwise answer "no".'
-            game = even_game
-        case 'gcd':
-            rules = 'Find the greatest common divisor of given numbers.'
-            game = gcd_game
-        case 'prime':
-            rules = 'Answer "yes" if given number is prime. '\
-                    'Otherwise answer "no".'
-            game = prime_number_game
-        case 'progression':
-            rules = 'What number is missing in the progression?'
-            game = progression_game
-        case _:
-            raise NameError('unidentified game type')
+    rules, generate_question_answer = define_rules_and_mechanics(game_type)
 
     user_name = greeting()
     print(rules)
     for i in range(ROUNDS):
-        question, correct_answer = game()
+        question, correct_answer = generate_question_answer()
         print(question)
         answer = prompt.string('Your answer: ')
         if answer == correct_answer:

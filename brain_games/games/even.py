@@ -1,12 +1,13 @@
-#!/usr/bin/env python3
 from random import randint
 
+
+RULES = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 MIN_NUMBER = 1
 MAX_NUMBER = 100
 
 
-def even_game():
+def generate_round():
     """
     """
     number = randint(MIN_NUMBER, MAX_NUMBER)

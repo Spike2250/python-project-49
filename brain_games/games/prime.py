@@ -1,12 +1,13 @@
-#!/usr/bin/env python3
 from random import randint
 
+
+RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 MIN_NUMBER = 2
 MAX_NUMBER = 199
 
 
-def prime_number_game():
+def generate_round():
     """
     """
     number = randint(MIN_NUMBER, MAX_NUMBER)

@@ -1,6 +1,7 @@
-#!/usr/bin/env python3
 from random import randint
 
+
+RULES = 'What number is missing in the progression?'
 
 MIN_START_POINT = 0
 MAX_START_POINT = 10
@@ -14,7 +15,7 @@ MAX_STEP = 13
 MIN_MISSING_INDEX = 1
 
 
-def progression_game():
+def generate_round():
     """
     """
     start_point = randint(MIN_START_POINT,
